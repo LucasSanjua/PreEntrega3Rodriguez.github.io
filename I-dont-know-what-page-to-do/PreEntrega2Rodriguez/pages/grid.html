@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I dont know what page to do</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <header class="header-page">
+        
+        <!-- Inicio de  menu  -->
+        <div class="container-menu">
+        <nav class="menu-navegacion">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#">Temas</a>
+                    <ul>
+                        <li><a href="grid.html">Grid</a></li>
+                        <li><a href="flex.html">Flex</a></li>
+                        <li><a href="gitandgithub.html">Git y GitHub</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <!-- Inicio contenido -->
+    <main>
+        
+        <div class="contenedor contenedor-page">
+            <div class="contenido-grid">
+                <h2>CSS Grid Layout</h2>
+                    <p>CSS Grid layout contiene funciones de diseño dirigidas a los desarrolladores de aplicaciones web. El CSS grid se puede utilizar para lograr muchos diseños diferentes. También se destaca por permitir dividir una página en áreas o regiones principales, por definir la relación en términos de tamaño, posición y capas entre partes de un control construido a partir de primitivas HTML.</p>
+                    <p>Grid CSS nace de esa necesidad, y recoge las ventajas de ese sistema, añadiendole numerosas mejoras y características que permiten crear rápidamente cuadrículas sencillas y potentes de forma prácticamente instantánea.</p>
+            </div>
+            <div class="conceptos">
+                <h3>Conceptos</h3>
+                <p>Para utilizar Grid CSS necesitaremos tener en cuenta una serie de conceptos que utilizaremos a partir de ahora y que definiremos a continuación:</p>
+
+                <img src="../img/conceptos-grid.webp" alt="grid-elementos">
+
+                <ul class="def-conceptos">
+                    <li><strong>Contenedor</strong>
+                    : El elemento padre contenedor que definirá la cuadrícula o rejilla.</li>
+                    <li><strong>Item</strong>
+                    : Cada uno de los hijos que contiene la cuadrícula (elemento contenedor).</li>
+                    <li><strong>Celda(grid cell)</strong>
+                    : Cada uno de los cuadritos (unidad mínima) de la cuadrícula.</li>
+                    <li><strong>Area(grid area)</strong>: Región o conjunto de celdas de la cuadrícula.</li>
+                    <li><strong>Banda(grid track)</strong>: Banda horizontal o vertical de celdas de la cuadrícula.</li>
+                    <li><strong>Linea(grid line)</strong>: Separador horizontal o vertical de las celdas de la cuadrícula.</li>
+                </ul>
+
+                <p>Para entender algunos conceptos supongamos que tenemos la siguiente linea de codigo</p>
+
+                <div class="codigo">
+                    <img src="../img/codigo-grid-html.png" alt="grid en html">
+                </div>
+                <!-- def.grid y inline-grid -->
+                <p>Para activar la cuadrícula grid hay que utilizar sobre el elemento contenedor la propiedad display y especificar el valor <b>grid </b>o <b> inline-grid</b>.</p>
+                <ul>
+                    <li><strong>inline-grid</strong>:Establece una cuadrícula con ítems en línea, de forma equivalente a inline-block.</li>
+                    <li><strong>grid</strong>:Establece una cuadrícula con ítems en bloque, de forma equivalente a block.</li>
+                </ul>
+                <p>Este valor influye en como se comportará la cuadrícula con el contenido exterior. El primero de ellos permite que la cuadrícula aparezca encima/debajo del contenido exterior (en bloque) y el segundo de ellos permite que la cuadrícula aparezca a la izquierda/derecha (en línea) del contenido exterior </p>
+                <p>Una vez elegido uno de estos dos valores, y establecida la propiedad display al elemento contenedor, hay varias formas de configurar nuestra cuadrícula grid. Comencemos con las propiedades que se aplican al elemento contenedor (padre).</p>
+            </div>
+
+            <div class="filas-columnas">
+                <h3>Grid con filas y columnas </h3>
+                <p>Es posible crear cuadrículas con un tamaño explícito. Para ello, sólo tenemos que usar las propiedades CSS<b> grid-template-columns </b>y <b>grid-template-rows</b>, que sirven para indicar las dimensiones de cada celda de la cuadrícula, diferenciando entre columnas y filas. Las propiedades son las siguientes:</p>
+
+                <img src="../img/tabla-columns-rows.png"  alt="tabla sobre atributos de rwo y columns">
+                
+                <p>Teniendo en cuenta el cuadro de arriba, creamos el sig CSS</p>
+
+                <img src="../img/codigo-css-grid.png" alt="codigo css implementando atributos a grid">
+
+                <p>Esto significa que tendremos una cuadricula con <b>2 columnas</b> (la primera con 50px de ancho y la segunda con 300px de ancho) y con <b>2 filas</b> (la primera con 200px de alto y la segunda con 75px de alto). Ahora, dependiendo del número de ítems (elementos hijos) que tenga el contenedor <b>grid</b>, tendremos una cuadrícula de 2x2 elementos (4 ítems), 2x3 elementos (6 ítems), 2x4 elementos (8 ítems) y así sucesivamente. Si el número de ítems es impar, la última celda de la cuadrícula se quedará vacía.</p>
+
+                <img src="../img/grid-template-columns.png" alt="representacionde como quedaria el codigo css">
+
+                <p>A medida que fueramos incluyendo más ítems en el grid, podríamos aumentar también el número de parámetros de grid-template-columns y/o grid-template-rows. Ten en cuenta que en este caso, tenemos dos valores en cada propiedad (2x2), lo que hacen una cuadrícula de 4 elementos, que es justo el número de ítems en el HTML</p>
+                <p>En caso de tener más ítems de lo que se indica en la propiedad, los ítems restantes se incluirían sin formato. De tener menos, simplemente se ocuparían los ítems implicados.</p>
+
+            </div>
+
+            <div class="unidad-fr">
+                <h3>Unidad fracción restante (fr) </h3>
+                <p>Anteriormente se uso  la medida <b>pixel</b> como unidades de las celdas de la cuadrícula, sin embargo, también podemos utilizar otras unidades (o incluso combinarlas) como porcentajes, la palabra clave <b>auto</b> (que obtiene el tamaño restante) o la unidad especial de Grid CSS <b>fr</b> (fraction), que simboliza una <b>fracción de espacio restante en el grid</b>.</p>
+                <p>Veamos un código de ejemplo en acción:</p>
+
+                <img src="../img/codigo-css-grid-fr.png" alt="codigo de css grid usando la medida fr">
+
+                <p>Este nuevo ejemplo, se crea una cuadrícula de 2x2, donde el tamaño de ancho de la cuadrícula se divide en <b>dos columnas</b> (mismo tamaño de ancho para cada una), y el tamaño de alto de la cuadrícula se divide en <b>dos filas</b>, donde la primera ocupará el doble (2 fr) que la segunda (1 fr):</p>
+
+                <img src="../img/grid-unidad-fr.png" alt="resultado del codigo css">
+
+                <p>De esta forma, podemos tener un mejor control del espacio restante de la cuadrícula, y como utilizarlo.</p>
+                <div class="info">
+                    <p>Se pueden combinar varias <b>unidades diferentes</b>, pudiendo utilizar píxeles (px) y fracciones restantes (fr), porcentajes (%) y fracciones restantes (fr) o combinaciónes similares.</p>
+                    <div class="info">
+                        <p>Se pueden combinar varias unidades diferentes, pudiendo utilizar píxeles (px) y fracciones restantes (fr), porcentajes (%) y fracciones restantes (fr) o combinaciónes similares.</p>
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <div class="filas-columnas-repetidas">
+                <h3>Filas y columnas repetitivas</h3>
+                <p>En caso de que tengamos que las propiedades <b>grid-template-columns</b> y <b>grid-template-rows</b> tengan los mismo valores podemos ahorrar tiempo usando la expresión <b>repeat()</b> para indicar repetición de valores, indicando el número de veces que se repiten y el tamaño en cuestión.</p>
+                <p>La expresión a utilizar sería la siguiente: <b>repeat([núm de veces]</b>, <b>[valor o valores])</b>:</p>
+
+                <img src="../img/grid-repeat-css.png" alt="codigo css usando repeat">
+
+                <p>Asumiendo que tuvieramos un contenedor grid con 8 ítems hijos (o más), el ejemplo anterior crearía una cuadrícula con <b>4 columnas</b> (la primera de 100px de ancho, la segunda y tercera de 50px de ancho y la cuarta de 200px de ancho). Por otro lado, tendría <b>2 filas</b> (la primera de 50px de alto, y la segunda de 100px de alto). En el caso de tener más ítems hijos, el patrón se seguiría repitiendo.</p>
+                <p>El ejemplo anterior seria equivalente a </p>
+                <img src="../img/grid-sin-repeat-css.png" alt="codigo css sin repeat">
+            </div>
+
+            <div class="lineas-nombradas">
+                <h3>Grid con líneas nombradas</h3>
+                <p>Con Grid CSS también tenemos la posibilidad de usar <b>«linenames»</b>, o lo que es lo mismo, ponerle nombre a las líneas de nuestro sistema grid. Vamos a verlo con un ejemplo, donde probablemente se vea mucho mejor. Partamos de esta estructura HTML:</p>
+
+                <img src="../img/html-linenames.png" alt="html nombrando estrucutras">
+                <p>Los nombres de las clases ya dan una idea del contenido que tendrán. Ahora, mediante Grid CSS lo que haremos es darle una estructura definida. Para ello, vamos a considerar los siguientes nombres para las lineas de nuestro grid, utilizando X para las posiciones en el eje X y utilizando Y para las posiciones en el eje Y:</p>
+
+                <img src="../img/grid-linenames.png" alt="referencias de X e Y">
+                <p>Teniendo esto en cuenta, lo único que tenemos que hacer es indicar estos nombres entre corchetes, justo antes de la medida que establecimos como vimos en apartados anteriores. Obsérvese que también se coloca una nombre de línea final sin medida a continuación, que representa la línea final:</p>
+                
+                <img src="../img/grid-linenames-css.png" alt="css linenames">
+                <p>En este caso, los nombres utilizados son tan sólo un ejemplo didáctico. Si se considera más adecuado, se podrían utilizar otros nombres quizás más amigables como top-line, top-medium-line, bottom-medium-line y bottom-line, por ejemplo, en lugar de y0, y1, y2 y y3 respectivamente.</p>
+                <p>Ahora, teniendo los nombres, sólo quedaría delimitar que zonas del grid queremos que ocupe cada uno de nuestros bloques  del grid. Para ello utilizaremos las propiedades grid-column-start, grid-column-end y grid-row-start, grid-row-end. También podriamos utilizar sus propiedades de atajo grid-column y grid-row.</p>
+                
+                <img src="../img/grid-linenames-css-enmaquetado.png" alt="enmaquetando el grid">
+
+                <p>El resultado final quedaria algo asi:</p>
+
+                <img src="../img/grid-linenames-zones.png" alt="resultado final del css">
+            </div>
+
+            <div class="uso-de-grid">
+                <h3>Usando grid con Bootstrap</h3>
+                <p>Ahora bien, un ejemplo implementar grid usando la herramienta Bootstrap, pero antes ¿Qué es Bootstrap?</p>
+                <h4>Bootstrap</h4>
+                    <p>Bootstrap es un framework CSS desarrollado por Twitter en 2010, para estandarizar las herramientas de la compañía.</p>
+                    <p>Inicialmente, se llamó Twitter Blueprint y, un poco más tarde, en 2011, se transformó en código abierto y su nombre cambió para Bootstrap. Desde entonces fue actualizado varias veces y ya se encuentra en la versión 5.</p>
+                    <p>El framework combina CSS y JavaScript para estilizar los elementos de una página HTML. Permite mucho más que, simplemente, cambiar el color de los botones y los enlaces.</p>
+                    <p>Esta es una herramienta que proporciona interactividad en la página, por lo que ofrece una serie de componentes que facilitan la comunicación con el usuario, como menús de navegación, controles de página, barras de progreso y más.</p>
+                <p>Ahora que sabemos mas o menos que es Bootstrap, vamos a implementarlo en una galeria de fotos.</p>
+                <section id="galeria" class="container">
+                    <div class=pt-5>
+                        <h4>Galeria</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <img src="../img/img-galeria/brock-wegner-L857-LVeSmQ-unsplash.jpg" alt="Imagen de galeria">
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <img src="../img/img-galeria/kairat-murataliev-EH-ujNe8FSc-unsplash.jpg" alt="Imagen de galeria">
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <img src="../img/img-galeria/kateryna-hliznitsova-ODIKce5SKnY-unsplash.jpg" alt="Imagen de galeria">
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <img src="../img/img-galeria/kellen-riggin-uIzBpeEqiN4-unsplash.jpg" alt="Imagen de galeria">
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="../img/img-galeria/mailchimp-lAx4E6Gl06s-unsplash.jpg" alt="Imagen de galeria">
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <img src="../img/img-galeria/vishwajeet-nishad-pc21vhOv-Uo-unsplash.jpg" alt="Imagen de galeria">
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+
+    </main>
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</body>
+</html>
